@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Order - It's All About Coffee</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#1a1a1a;color:#fff;transition:0.3s;direction:ltr;}
+a{text-decoration:none;color:inherit;}
+input, textarea, select{width:100%;padding:10px;margin:5px 0 15px 0;border-radius:6px;border:none;outline:none;font-family:'Poppins',sans-serif;}
+textarea{resize:none;height:120px;}
+button{background:linear-gradient(45deg,#ffb400,#e0a000);color:#000;padding:12px 25px;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:0.3s;}
+button:hover{opacity:0.9;}
+
+/* Header */
+header{
+  padding:20px 50px;
+  display:flex; justify-content:space-between; align-items:center;
+  background: rgba(20,20,20,0.95);
+  backdrop-filter: blur(5px);
+  position: sticky; top:0; z-index:10;
+}
+.logo{font-size:1.8rem;font-weight:700;color:#ffd966;}
+nav a{margin-left:25px;font-weight:500;color:#fff;transition:0.3s;}
+nav a:hover{color:#ffd966;}
+.lang-switch{display:flex;align-items:center;}
+.lang-switch button{margin-left:5px;background:linear-gradient(45deg,#ffb400,#e0a000);color:#000;padding:6px 14px;border-radius:6px;font-weight:bold;cursor:pointer;transition:0.3s;}
+.lang-switch button:hover{opacity:0.9;}
+
+/* Hero */
+.hero{
+  height:35vh;
+  background:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  position: relative;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:0 20px;
+}
+.hero::after{
+  content:'';
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.6);
+}
+.hero div{position: relative; z-index:2; max-width:800px;}
+.hero h1{font-size:2rem;color:#ffd966;text-shadow:2px 2px 10px #000;margin-bottom:10px;}
+.hero p{font-size:1rem;color:#ddd;}
+
+/* Sections */
+.section{padding:60px 50px;}
+.section h2{font-size:2rem;margin-bottom:40px;color:#ffd966;text-align:center;}
+.contact-container{display:flex;flex-wrap:wrap;gap:40px;justify-content:center;}
+.contact-info, .contact-form, .order-form{background: rgba(255,255,255,0.05);backdrop-filter: blur(10px);border-radius:15px;padding:30px;flex:1;min-width:300px;max-width:450px;}
+.contact-info h3, .contact-form h3, .order-form h3{color:#ffd966;margin-bottom:20px;}
+.contact-info p{color:#ccc;margin-bottom:10px;font-size:0.95rem;}
+
+/* Footer */
+footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:50px; font-size:0.9rem;}
+
+/* Responsive */
+@media(max-width:768px){
+  header{padding:15px 20px;}
+  nav a{margin-left:15px;}
+  .hero h1{font-size:1.6rem;}
+  .hero p{font-size:0.95rem;}
+  .contact-container{flex-direction:column;gap:30px;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.4rem;}
+  .hero p{font-size:0.9rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">It's All About Coffee</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+    <span class="lang-switch">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ur')">UR</button>
+    </span>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div>
+    <h1 id="hero-title">Contact & Order</h1>
+    <p id="hero-subtitle">Reach us or place your order online!</p>
+  </div>
+</section>
+
+<!-- Contact & Order Section -->
+<section class="section">
+  <h2 id="section-title">Get in Touch / آن لائن رابطہ کریں</h2>
+  <div class="contact-container">
+    
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3 id="info-title">Restaurant Info</h3>
+      <p id="info-location">Location: Muzaffargarh</p>
+      <p id="info-phone">Phone: 03080432842</p>
+      <p id="info-hours">Business Hours: 9 AM - 10 PM</p>
+    </div>
+    
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h3 id="form-title">Send a Message</h3>
+      <form>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="contact" placeholder="Contact Number" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit" id="submit-btn">Send Message</button>
+      </form>
+    </div>
+    
+    <!-- Online Order Form -->
+    <div class="order-form">
+      <h3 id="order-title">Order Online / آن لائن آرڈر کریں</h3>
+      <form>
+        <input type="text" id="order-name" placeholder="Name / نام" required>
+        <input type="text" id="order-phone" placeholder="Contact Number / فون" required>
+        <input type="text" id="order-address" placeholder="Location / پتہ" required>
+        <select id="order-item" required>
+          <option value="" disabled selected>Select Item / آئٹم منتخب کریں</option>
+          <option value="espresso">Espresso</option>
+          <option value="cappuccino">Cappuccino</option>
+          <option value="latte">Latte</option>
+          <option value="croissant">Croissant</option>
+          <option value="muffin">Chocolate Muffin</option>
+          <option value="tart">Blueberry Tart</option>
+        </select>
+        <input type="number" id="order-qty" placeholder="Quantity / مقدار" min="1" required>
+        <select id="payment-method" required>
+          <option value="" disabled selected>Select Payment / ادائیگی کا طریقہ</option>
+          <option value="jazzcash">JazzCash</option>
+          <option value="easypaisa">Easypaisa</option>
+          <option value="paypal">PayPal</option>
+        </select>
+        <button type="submit" id="order-btn">Place Order / آرڈر کریں</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  Location: Muzaffargarh | Phone: 03080432842 | Business Hours: 9 AM - 10 PM<br>
+  &copy; 2025 It's All About Coffee. All Rights Reserved.
+</footer>
+
+<!-- Language Script -->
+<script>
+const translations={
+  en:{
+    heroTitle:"Contact & Order",
+    heroSubtitle:"Reach us or place your order online!",
+    sectionTitle:"Get in Touch / Online Order",
+    infoTitle:"Restaurant Info",
+    infoLocation:"Location: Muzaffargarh",
+    infoPhone:"Phone: 03080432842",
+    infoHours:"Business Hours: 9 AM - 10 PM",
+    formTitle:"Send a Message",
+    submitBtn:"Send Message",
+    orderTitle:"Order Online",
+    orderName:"Name",
+    orderPhone:"Contact Number",
+    orderAddress:"Location",
+    orderQty:"Quantity",
+    orderBtn:"Place Order"
+  },
+  ur:{
+    heroTitle:"رابطہ اور آرڈر",
+    heroSubtitle:"ہم سے رابطہ کریں یا آن لائن آرڈر کریں!",
+    sectionTitle:"رابطہ کریں / آن لائن آرڈر کریں",
+    infoTitle:"ریسٹورنٹ کی معلومات",
+    infoLocation:"مقام: مظفرگڑھ",
+    infoPhone:"فون: 03080432842",
+    infoHours:"کاروباری اوقات: صبح 9 - شام 10",
+    formTitle:"پیغام بھیجیں",
+    submitBtn:"پیغام بھیجیں",
+    orderTitle:"آن لائن آرڈر کریں",
+    orderName:"نام",
+    orderPhone:"فون",
+    orderAddress:"پتہ",
+    orderQty:"مقدار",
+    orderBtn:"آرڈر کریں"
+  }
+};
+
+function setLang(lang){
+  document.body.style.direction=(lang==='ur')?'rtl':'ltr';
+  document.getElementById('hero-title').textContent=translations[lang].heroTitle;
+  document.getElementById('hero-subtitle').textContent=translations[lang].heroSubtitle;
+  document.getElementById('section-title').textContent=translations[lang].sectionTitle;
+  document.getElementById('info-title').textContent=translations[lang].infoTitle;
+  document.getElementById('info-location').textContent=translations[lang].infoLocation;
+  document.getElementById('info-phone').textContent=translations[lang].infoPhone;
+  document.getElementById('info-hours').textContent=translations[lang].infoHours;
+  document.getElementById('form-title').textContent=translations[lang].formTitle;
+  document.getElementById('submit-btn').textContent=translations[lang].submitBtn;
+  document.getElementById('order-title').textContent=translations[lang].orderTitle;
+  document.getElementById('order-name').placeholder=translations[lang].orderName;
+  document.getElementById('order-phone').placeholder=translations[lang].orderPhone;
+  document.getElementById('order-address').placeholder=translations[lang].orderAddress;
+  document.getElementById('order-qty').placeholder=translations[lang].orderQty;
+  document.getElementById('order-btn').textContent=translations[lang].orderBtn;
+}
+</script>
+
+</body>
+</html>
