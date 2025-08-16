@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muzaffargarh Restaurant</title>
+<title>Grill & Slice</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
@@ -99,7 +99,7 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
 
 <!-- Header -->
 <header>
-  <div class="logo">Muzaffargarh Restaurant</div>
+  <div class="logo">Grill & Slice</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="menu.html">Menu</a>
@@ -118,7 +118,7 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
 <!-- Hero -->
 <section class="hero">
   <div>
-    <h1 id="hero-title">Welcome to Muzaffargarh Restaurant</h1>
+    <h1 id="hero-title">Welcome to Grill & Slice</h1>
     <p id="hero-subtitle">Delicious pizza, burgers & fast food – freshly prepared for you!</p>
     <a href="menu.html" class="btn" id="hero-btn">Explore Menu</a>
   </div>
@@ -149,14 +149,14 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
 <!-- Footer -->
 <footer>
   Location: Muzaffargarh | Phone: 03080432842 | Business Hours: 9 AM - 10 PM<br>
-  &copy; 2025 Muzaffargarh Restaurant. All Rights Reserved.
+  &copy; 2025 Grill & Slice. All Rights Reserved.
 </footer>
 
 <!-- Language Script -->
 <script>
 const translations={
   en:{
-    heroTitle:"Welcome to Muzaffargarh Restaurant",
+    heroTitle:"Welcome to Grill & Slice",
     heroSubtitle:"Delicious pizza, burgers & fast food – freshly prepared for you!",
     heroBtn:"Explore Menu",
     feat1Title:"Delicious Pizza",
@@ -167,7 +167,7 @@ const translations={
     feat3Desc:"French fries, nuggets, sandwiches – quick & tasty."
   },
   ur:{
-    heroTitle:"مظفرگڑھ ریسٹورنٹ میں خوش آمدید",
+    heroTitle:"گرل اینڈ سلائس میں خوش آمدید",
     heroSubtitle:"مزیدار پیزا، برگر اور فاسٹ فوڈ – تازہ تیار!",
     heroBtn:"مینو دیکھیں",
     feat1Title:"مزیدار پیزا",
@@ -178,7 +178,7 @@ const translations={
     feat3Desc:"فرنچ فرائز، نگٹس، سینڈوچ – جلدی اور مزیدار۔"
   },
   srk:{
-    heroTitle:"مظفرگڑھ ریسٹورنٹ اچ خوش آمدید",
+    heroTitle:"گرل اینڈ سلائس اچ خوش آمدید",
     heroSubtitle:"مزیدار پیزا، برگر تے فاسٹ فوڈ – تازہ تیار!",
     heroBtn:"مینو ویکھو",
     feat1Title:"مزیدار پیزا",
@@ -193,16 +193,4 @@ const translations={
 function setLang(lang){
   document.body.style.direction=(lang==='ur'||lang==='srk')?'rtl':'ltr';
   document.getElementById('hero-title').textContent=translations[lang].heroTitle;
-  document.getElementById('hero-subtitle').textContent=translations[lang].heroSubtitle;
-  document.getElementById('hero-btn').textContent=translations[lang].heroBtn;
-  document.getElementById('feat1-title').textContent=translations[lang].feat1Title;
-  document.getElementById('feat1-desc').textContent=translations[lang].feat1Desc;
-  document.getElementById('feat2-title').textContent=translations[lang].feat2Title;
-  document.getElementById('feat2-desc').textContent=translations[lang].feat2Desc;
-  document.getElementById('feat3-title').textContent=translations[lang].feat3Title;
-  document.getElementById('feat3-desc').textContent=translations[lang].feat3Desc;
-}
-</script>
-
-</body>
-</html>
+  document.getElementById('hero-subtitle').textContent=translations[lang].
