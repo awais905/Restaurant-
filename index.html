@@ -128,7 +128,7 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
 <section class="featured" id="featured">
   <!-- Pizza -->
   <div class="feature-card">
-    <img src="https://images.unsplash.com/photo-1594007659547-9a90c0a0d30f?auto=format&fit=crop&w=400&q=80" alt="Pizza">
+    <img src="https://images.unsplash.com/photo-1601924577820-7f2c6a2e5d1d?auto=format&fit=crop&w=400&q=80" alt="Pizza">
     <h3 id="feat1-title">Delicious Pizza</h3>
     <p id="feat1-desc">Margherita, Pepperoni, BBQ Chicken – baked fresh every day.</p>
   </div>
@@ -193,4 +193,16 @@ const translations={
 function setLang(lang){
   document.body.style.direction=(lang==='ur'||lang==='srk')?'rtl':'ltr';
   document.getElementById('hero-title').textContent=translations[lang].heroTitle;
-  document.getElementById('hero-subtitle').textContent=translations[lang].
+  document.getElementById('hero-subtitle').textContent=translations[lang].heroSubtitle;
+  document.getElementById('hero-btn').textContent=translations[lang].heroBtn;
+  document.getElementById('feat1-title').textContent=translations[lang].feat1Title;
+  document.getElementById('feat1-desc').textContent=translations[lang].feat1Desc;
+  document.getElementById('feat2-title').textContent=translations[lang].feat2Title;
+  document.getElementById('feat2-desc').textContent=translations[lang].feat2Desc;
+  document.getElementById('feat3-title').textContent=translations[lang].feat3Title;
+  document.getElementById('feat3-desc').textContent=translations[lang].feat3Desc;
+}
+</script>
+
+</body>
+</html>
