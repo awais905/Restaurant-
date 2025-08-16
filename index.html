@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>It's All About Coffee</title>
+<title>Muzaffargarh Restaurant</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#1a1a1a;color:#fff;transition:0.3s;direction:ltr;}
 a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;}
+input, select{width:100%;padding:10px;margin:5px 0 15px 0;border-radius:6px;border:none;outline:none;font-family:'Poppins',sans-serif;}
+button{background:linear-gradient(45deg,#ffb400,#e0a000);color:#000;padding:12px 25px;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:0.3s;}
+button:hover{opacity:0.9;}
 
 /* Header */
 header{
@@ -23,22 +26,13 @@ header{
 nav a{margin-left:25px;font-weight:500;color:#fff;transition:0.3s;}
 nav a:hover{color:#ffd966;}
 .lang-switch{display:flex;align-items:center;}
-.lang-switch button{
-  background: linear-gradient(45deg,#ffb400,#e0a000);
-  color:#000;
-  padding:6px 14px;
-  border-radius:6px;
-  margin-left:5px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-}
+.lang-switch button{margin-left:5px;background:linear-gradient(45deg,#ffb400,#e0a000);color:#000;padding:6px 14px;border-radius:6px;font-weight:bold;cursor:pointer;transition:0.3s;}
 .lang-switch button:hover{opacity:0.9;}
 
 /* Hero Section */
 .hero{
   height:75vh;
-  background:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
   position: relative;
   display:flex; align-items:center; justify-content:center; text-align:center;
   padding:0 20px;
@@ -107,7 +101,7 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
 
 <!-- Header -->
 <header>
-  <div class="logo">It's All About Coffee</div>
+  <div class="logo">Muzaffargarh Restaurant</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="menu.html">Menu</a>
@@ -122,61 +116,64 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
 <!-- Hero -->
 <section class="hero">
   <div>
-    <h1 id="hero-title">Welcome to It's All About Coffee</h1>
-    <p id="hero-subtitle">Taste the best coffee in town – Freshly brewed just for you!</p>
+    <h1 id="hero-title">Welcome to Muzaffargarh Restaurant</h1>
+    <p id="hero-subtitle">Delicious coffee, pizza, burgers & fast food – freshly prepared for you!</p>
     <a href="menu.html" class="btn" id="hero-btn">Explore Menu</a>
   </div>
 </section>
 
 <!-- Featured Section -->
 <section class="featured" id="featured">
+  <!-- Coffee -->
   <div class="feature-card">
     <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Coffee">
     <h3 id="feat1-title">Freshly Brewed Coffee</h3>
     <p id="feat1-desc">Experience aromatic coffee made from premium beans.</p>
   </div>
+  <!-- Pizza -->
   <div class="feature-card">
-    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Pastry">
-    <h3 id="feat2-title">Delicious Pastries</h3>
-    <p id="feat2-desc">Tasty pastries baked fresh every day to complement your coffee.</p>
+    <img src="https://images.unsplash.com/photo-1594007659547-9a90c0a0d30f?auto=format&fit=crop&w=400&q=80" alt="Pizza">
+    <h3 id="feat2-title">Delicious Pizza</h3>
+    <p id="feat2-desc">Margherita, Pepperoni, BBQ Chicken – baked fresh every day.</p>
   </div>
+  <!-- Burger -->
   <div class="feature-card">
-    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=400&q=80" alt="Cozy Ambiance">
-    <h3 id="feat3-title">Cozy Ambiance</h3>
-    <p id="feat3-desc">Relax in our warm and inviting café atmosphere.</p>
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80" alt="Burger">
+    <h3 id="feat3-title">Tasty Burgers</h3>
+    <p id="feat3-desc">Beef, Chicken & Veggie burgers with fresh toppings and sauces.</p>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
   Location: Muzaffargarh | Phone: 03080432842 | Business Hours: 9 AM - 10 PM<br>
-  &copy; 2025 It's All About Coffee. All Rights Reserved.
+  &copy; 2025 Muzaffargarh Restaurant. All Rights Reserved.
 </footer>
 
 <!-- Language Script -->
 <script>
 const translations={
   en:{
-    heroTitle:"Welcome to It's All About Coffee",
-    heroSubtitle:"Taste the best coffee in town – Freshly brewed just for you!",
+    heroTitle:"Welcome to Muzaffargarh Restaurant",
+    heroSubtitle:"Delicious coffee, pizza, burgers & fast food – freshly prepared for you!",
     heroBtn:"Explore Menu",
     feat1Title:"Freshly Brewed Coffee",
     feat1Desc:"Experience aromatic coffee made from premium beans.",
-    feat2Title:"Delicious Pastries",
-    feat2Desc:"Tasty pastries baked fresh every day to complement your coffee.",
-    feat3Title:"Cozy Ambiance",
-    feat3Desc:"Relax in our warm and inviting café atmosphere."
+    feat2Title:"Delicious Pizza",
+    feat2Desc:"Margherita, Pepperoni, BBQ Chicken – baked fresh every day.",
+    feat3Title:"Tasty Burgers",
+    feat3Desc:"Beef, Chicken & Veggie burgers with fresh toppings and sauces."
   },
   ur:{
-    heroTitle:"It's All About Coffee میں خوش آمدید",
-    heroSubtitle:"شہر میں بہترین کافی کا ذائقہ – تازہ تیار شدہ!",
+    heroTitle:"مظفرگڑھ ریسٹورنٹ میں خوش آمدید",
+    heroSubtitle:"مزیدار کافی، پیزا، برگر اور فاسٹ فوڈ – تازہ تیار!",
     heroBtn:"مینو دیکھیں",
     feat1Title:"تازہ کافی",
     feat1Desc:"اعلی معیار کے بینز سے خوشبودار کافی کا تجربہ کریں۔",
-    feat2Title:"مزیدار پیسٹریز",
-    feat2Desc:"ہر روز تازہ بیک کی گئی مزیدار پیسٹریز۔",
-    feat3Title:"آرام دہ ماحول",
-    feat3Desc:"ہمارے کیفے کے خوشگوار ماحول میں آرام کریں۔"
+    feat2Title:"مزیدار پیزا",
+    feat2Desc:"مارگریٹا، پیپرونی، بی بی کیو چکن – ہر روز تازہ بیک!",
+    feat3Title:"مزیدار برگر",
+    feat3Desc:"بیف، چکن اور سبزی والے برگر تازہ ٹاپنگ اور سوس کے ساتھ۔"
   }
 };
 
