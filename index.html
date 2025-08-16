@@ -25,9 +25,7 @@ header{
 .logo{font-size:1.8rem;font-weight:700;color:#ffd966;}
 nav a{margin-left:25px;font-weight:500;color:#fff;transition:0.3s;}
 nav a:hover{color:#ffd966;}
-.lang-switch{display:flex;align-items:center;}
-.lang-switch button{margin-left:5px;background:linear-gradient(45deg,#ffb400,#e0a000);color:#000;padding:6px 14px;border-radius:6px;font-weight:bold;cursor:pointer;transition:0.3s;}
-.lang-switch button:hover{opacity:0.9;}
+.lang-switch select{padding:6px 12px;margin-left:10px;border-radius:6px;border:none;outline:none;cursor:pointer;}
 
 /* Hero Section */
 .hero{
@@ -107,8 +105,12 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
     <a href="menu.html">Menu</a>
     <a href="contact.html">Contact</a>
     <span class="lang-switch">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('ur')">UR</button>
+      <select onchange="setLang(this.value)">
+        <option value="en">Language</option>
+        <option value="en">English</option>
+        <option value="ur">Urdu</option>
+        <option value="srk">Saraiki</option>
+      </select>
     </span>
   </nav>
 </header>
@@ -117,30 +119,30 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
 <section class="hero">
   <div>
     <h1 id="hero-title">Welcome to Muzaffargarh Restaurant</h1>
-    <p id="hero-subtitle">Delicious coffee, pizza, burgers & fast food – freshly prepared for you!</p>
+    <p id="hero-subtitle">Delicious pizza, burgers & fast food – freshly prepared for you!</p>
     <a href="menu.html" class="btn" id="hero-btn">Explore Menu</a>
   </div>
 </section>
 
 <!-- Featured Section -->
 <section class="featured" id="featured">
-  <!-- Coffee -->
-  <div class="feature-card">
-    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Coffee">
-    <h3 id="feat1-title">Freshly Brewed Coffee</h3>
-    <p id="feat1-desc">Experience aromatic coffee made from premium beans.</p>
-  </div>
   <!-- Pizza -->
   <div class="feature-card">
     <img src="https://images.unsplash.com/photo-1594007659547-9a90c0a0d30f?auto=format&fit=crop&w=400&q=80" alt="Pizza">
-    <h3 id="feat2-title">Delicious Pizza</h3>
-    <p id="feat2-desc">Margherita, Pepperoni, BBQ Chicken – baked fresh every day.</p>
+    <h3 id="feat1-title">Delicious Pizza</h3>
+    <p id="feat1-desc">Margherita, Pepperoni, BBQ Chicken – baked fresh every day.</p>
   </div>
   <!-- Burger -->
   <div class="feature-card">
     <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80" alt="Burger">
-    <h3 id="feat3-title">Tasty Burgers</h3>
-    <p id="feat3-desc">Beef, Chicken & Veggie burgers with fresh toppings and sauces.</p>
+    <h3 id="feat2-title">Tasty Burgers</h3>
+    <p id="feat2-desc">Beef, Chicken & Veggie burgers with fresh toppings and sauces.</p>
+  </div>
+  <!-- Fast Food -->
+  <div class="feature-card">
+    <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=400&q=80" alt="Fast Food">
+    <h3 id="feat3-title">Fast Food Specials</h3>
+    <p id="feat3-desc">French fries, nuggets, sandwiches – quick & tasty.</p>
   </div>
 </section>
 
@@ -155,30 +157,41 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
 const translations={
   en:{
     heroTitle:"Welcome to Muzaffargarh Restaurant",
-    heroSubtitle:"Delicious coffee, pizza, burgers & fast food – freshly prepared for you!",
+    heroSubtitle:"Delicious pizza, burgers & fast food – freshly prepared for you!",
     heroBtn:"Explore Menu",
-    feat1Title:"Freshly Brewed Coffee",
-    feat1Desc:"Experience aromatic coffee made from premium beans.",
-    feat2Title:"Delicious Pizza",
-    feat2Desc:"Margherita, Pepperoni, BBQ Chicken – baked fresh every day.",
-    feat3Title:"Tasty Burgers",
-    feat3Desc:"Beef, Chicken & Veggie burgers with fresh toppings and sauces."
+    feat1Title:"Delicious Pizza",
+    feat1Desc:"Margherita, Pepperoni, BBQ Chicken – baked fresh every day.",
+    feat2Title:"Tasty Burgers",
+    feat2Desc:"Beef, Chicken & Veggie burgers with fresh toppings and sauces.",
+    feat3Title:"Fast Food Specials",
+    feat3Desc:"French fries, nuggets, sandwiches – quick & tasty."
   },
   ur:{
     heroTitle:"مظفرگڑھ ریسٹورنٹ میں خوش آمدید",
-    heroSubtitle:"مزیدار کافی، پیزا، برگر اور فاسٹ فوڈ – تازہ تیار!",
+    heroSubtitle:"مزیدار پیزا، برگر اور فاسٹ فوڈ – تازہ تیار!",
     heroBtn:"مینو دیکھیں",
-    feat1Title:"تازہ کافی",
-    feat1Desc:"اعلی معیار کے بینز سے خوشبودار کافی کا تجربہ کریں۔",
-    feat2Title:"مزیدار پیزا",
-    feat2Desc:"مارگریٹا، پیپرونی، بی بی کیو چکن – ہر روز تازہ بیک!",
-    feat3Title:"مزیدار برگر",
-    feat3Desc:"بیف، چکن اور سبزی والے برگر تازہ ٹاپنگ اور سوس کے ساتھ۔"
+    feat1Title:"مزیدار پیزا",
+    feat1Desc:"مارگریٹا، پیپرونی، بی بی کیو چکن – ہر روز تازہ بیک!",
+    feat2Title:"مزیدار برگر",
+    feat2Desc:"بیف، چکن اور سبزی والے برگر تازہ ٹاپنگ اور سوس کے ساتھ۔",
+    feat3Title:"فاسٹ فوڈ اسپیشلز",
+    feat3Desc:"فرنچ فرائز، نگٹس، سینڈوچ – جلدی اور مزیدار۔"
+  },
+  srk:{
+    heroTitle:"مظفرگڑھ ریسٹورنٹ اچ خوش آمدید",
+    heroSubtitle:"مزیدار پیزا، برگر تے فاسٹ فوڈ – تازہ تیار!",
+    heroBtn:"مینو ویکھو",
+    feat1Title:"مزیدار پیزا",
+    feat1Desc:"مارگریٹا، پیپرونی، بی بی کیو چکن – ہر روز تازہ بیک!",
+    feat2Title:"مزیدار برگر",
+    feat2Desc:"بیف، چکن تے سبزی والے برگر تازہ ٹاپنگ تے سوس نال۔",
+    feat3Title:"فاسٹ فوڈ اسپیشلز",
+    feat3Desc:"فرنچ فرائز، نگٹس، سینڈوچ – جلدی تے مزیدار۔"
   }
 };
 
 function setLang(lang){
-  document.body.style.direction=(lang==='ur')?'rtl':'ltr';
+  document.body.style.direction=(lang==='ur'||lang==='srk')?'rtl':'ltr';
   document.getElementById('hero-title').textContent=translations[lang].heroTitle;
   document.getElementById('hero-subtitle').textContent=translations[lang].heroSubtitle;
   document.getElementById('hero-btn').textContent=translations[lang].heroBtn;
