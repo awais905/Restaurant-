@@ -7,92 +7,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#1a1a1a;color:#fff;transition:0.3s;direction:ltr;}
+body{background:#1a1a1a;color:#fff;transition:0.3s;}
 a{text-decoration:none;color:inherit;}
-img{max-width:100%;display:block;}
+img{max-width:100%;display:block;border-radius:12px;}
 button, select{font-family:'Poppins',sans-serif;}
-button{background:linear-gradient(45deg,#ffb400,#e0a000);color:#000;padding:12px 25px;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:0.3s;}
-button:hover{opacity:0.9;}
+button{background:linear-gradient(45deg,#ffb400,#e0a000);color:#000;padding:12px 20px;margin:5px;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:0.3s;}
+button:hover{opacity:0.9;transform:scale(1.05);}
 select{padding:8px 12px;margin-left:10px;border-radius:6px;outline:none;border:none;cursor:pointer;}
 
 /* Header */
-header{
-  padding:20px 50px;
-  display:flex; justify-content:space-between; align-items:center;
-  background: rgba(20,20,20,0.95);
-  backdrop-filter: blur(5px);
-  position: sticky; top:0; z-index:10;
-}
-.logo{font-size:1.8rem;font-weight:700;color:#ffd966;}
+header{padding:20px 50px;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,20,0.95);backdrop-filter:blur(5px);position:sticky;top:0;z-index:10;}
+.logo{font-size:2rem;font-weight:700;color:#ffd966;}
 nav a{margin-left:25px;font-weight:500;color:#fff;transition:0.3s;}
 nav a:hover{color:#ffd966;}
 
-/* Hero Section */
-.hero{
-  height:75vh;
-  background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  position: relative;
-  display:flex; align-items:center; justify-content:center; text-align:center;
-  padding:0 20px;
-}
-.hero::after{
-  content:'';
-  position:absolute; top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.6);
-}
-.hero div{position: relative; z-index:2; max-width:800px;}
-.hero h1{font-size:2rem;color:#ffd966;text-shadow:2px 2px 10px #000;margin-bottom:15px;}
-.hero p{font-size:1rem;color:#ddd;margin-bottom:20px;}
-.hero .btn{
-  padding:12px 30px;
-  background: linear-gradient(45deg,#ffb400,#e0a000);
-  border-radius:8px;
-  font-weight:600;
-  display:inline-block;
-  transition:0.3s;
-}
-.hero .btn:hover{opacity:0.9;}
+/* Hero */
+.hero{position:relative;text-align:center;color:#fff;}
+.hero img{width:100%;height:60vh;object-fit:cover;opacity:0.6;}
+.hero-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.hero-text h1{font-size:3rem;color:#ffd966;margin-bottom:15px;text-shadow:2px 2px 8px #000;}
+.hero-text p{font-size:1.2rem;color:#fff;text-shadow:1px 1px 6px #000;}
 
-/* Featured Section */
-.featured{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-  padding:60px 20px;
-}
-.feature-card{
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border-radius:15px;
-  overflow:hidden;
-  width:280px;
-  transition:0.3s;
-  text-align:center;
-  cursor:pointer;
-  padding:20px;
-}
-.feature-card:hover{transform:scale(1.03);}
-.feature-card img{height:150px; object-fit:cover; border-radius:10px; margin-bottom:15px;}
-.feature-card h3{color:#ffd966; margin-bottom:10px;}
-.feature-card p{color:#ccc; font-size:0.9rem;}
+/* Category Section */
+.section{padding:60px 20px;max-width:1100px;margin:0 auto;text-align:center;}
+.section h2{font-size:2rem;color:#ffd966;margin-bottom:40px;border-bottom:2px solid #ffd966;display:inline-block;padding-bottom:5px;}
+.category-cards{display:flex;justify-content:space-between;flex-wrap:wrap;}
+.category-card{background: rgba(255,255,255,0.05);backdrop-filter: blur(10px);border-radius:15px;padding:20px;margin:10px;width:32%;transition:0.3s;}
+.category-card:hover{transform:scale(1.03);box-shadow:0 10px 25px rgba(0,0,0,0.6);}
+.category-card h3{color:#ffb400;margin-bottom:10px;font-size:1.2rem;}
 
 /* Footer */
-footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:50px; font-size:0.9rem;}
+footer{background:#121212;text-align:center;padding:25px;color:#aaa;margin-top:50px;font-size:0.9rem;}
 
 /* Responsive */
-@media(max-width:768px){
-  header{padding:15px 20px;}
-  nav a{margin-left:15px;}
-  .hero h1{font-size:1.6rem;}
-  .hero p{font-size:0.95rem;}
-  .featured{gap:20px;}
-}
-@media(max-width:480px){
-  .hero h1{font-size:1.4rem;}
-  .hero p{font-size:0.9rem;}
-  .feature-card{width:100%;}
-}
+@media(max-width:992px){.category-card{width:48%;}}
+@media(max-width:600px){.category-card{width:100%;margin:10px 0;}}
 </style>
 </head>
 <body>
@@ -102,91 +51,70 @@ footer{background:#121212;text-align:center;padding:20px;color:#aaa;margin-top:5
   <div class="logo">Muzaffargarh Restaurant</div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html">Contact / Order</a>
     <select onchange="setLang(this.value)">
-      <option value="en">Language / زبان</option>
+      <option value="en">Language / زبان / ٻولي</option>
       <option value="en">English</option>
       <option value="ur">Urdu</option>
+      <option value="srk">Saraiki</option>
     </select>
   </nav>
 </header>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="hero">
-  <div>
-    <h1 id="hero-title">Welcome to Muzaffargarh Restaurant</h1>
-    <p id="hero-subtitle">Delicious coffee, pizza, burgers & fast food – freshly prepared for you!</p>
-    <a href="menu.html" class="btn" id="hero-btn">Explore Menu</a>
+  <img src="images/hero-food.jpg" alt="Delicious Food">
+  <div class="hero-text">
+    <h1 id="hero-title">Delicious Coffee, Pizza & Fast Food</h1>
+    <p id="hero-subtitle">Fresh, Hot & Ready to Order</p>
   </div>
 </section>
 
-<!-- Featured Section -->
-<section class="featured" id="featured">
-  <!-- Coffee -->
-  <div class="feature-card">
-    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Coffee">
-    <h3 id="feat1-title">Freshly Brewed Coffee</h3>
-    <p id="feat1-desc">Experience aromatic coffee made from premium beans.</p>
-  </div>
-  <!-- Pizza -->
-  <div class="feature-card">
-    <img src="https://images.unsplash.com/photo-1571091655789-97b61f28c7d6?auto=format&fit=crop&w=400&q=80" alt="Pizza">
-    <h3 id="feat2-title">Delicious Pizza</h3>
-    <p id="feat2-desc">Margherita, Pepperoni, BBQ Chicken – baked fresh every day.</p>
-  </div>
-  <!-- Burger -->
-  <div class="feature-card">
-    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80" alt="Burger">
-    <h3 id="feat3-title">Tasty Burgers</h3>
-    <p id="feat3-desc">Beef, Chicken & Veggie burgers with fresh toppings and sauces.</p>
-  </div>
+<!-- Categories Section -->
+<section class="section">
+<h2 id="category-title">Our Specials</h2>
+<div class="category-cards">
+
+<!-- Coffee Card -->
+<div class="category-card">
+<img src="images/coffee.jpg" alt="Coffee">
+<h3>Special Coffee</h3>
+<button onclick="location.href='menu.html'">Order Now</button>
+<button onclick="location.href='contact.html'">Online Order</button>
+</div>
+
+<!-- Pizza Card -->
+<div class="category-card">
+<img src="images/pizza.jpg" alt="Pizza">
+<h3>Margherita Pizza</h3>
+<button onclick="location.href='menu.html'">Order Now</button>
+<button onclick="location.href='contact.html'">Online Order</button>
+</div>
+
+<!-- Fast Food Card -->
+<div class="category-card">
+<img src="images/burger.jpg" alt="Burger & Fast Food">
+<h3>Classic Beef Burger</h3>
+<button onclick="location.href='menu.html'">Order Now</button>
+<button onclick="location.href='contact.html'">Online Order</button>
+</div>
+
+</div>
 </section>
 
 <!-- Footer -->
 <footer>
-  Location: Muzaffargarh | Phone: 03080432842 | Business Hours: 9 AM - 10 PM<br>
-  &copy; 2025 Muzaffargarh Restaurant. All Rights Reserved.
+Location: Muzaffargarh | Phone: <a href="tel:03080432842">03080432842</a> | WhatsApp: <a href="https://wa.me/03080432842" target="_blank">03080432842</a> | Email: <a href="mailto:awaisaziz8832@gmail.com">awaisaziz8832@gmail.com</a><br>
+Business Hours: 9 AM - 10 PM<br>
+&copy; 2025 Muzaffargarh Restaurant. All Rights Reserved.
 </footer>
 
 <!-- Language Script -->
 <script>
-const translations={
-  en:{
-    heroTitle:"Welcome to Muzaffargarh Restaurant",
-    heroSubtitle:"Delicious coffee, pizza, burgers & fast food – freshly prepared for you!",
-    heroBtn:"Explore Menu",
-    feat1Title:"Freshly Brewed Coffee",
-    feat1Desc:"Experience aromatic coffee made from premium beans.",
-    feat2Title:"Delicious Pizza",
-    feat2Desc:"Margherita, Pepperoni, BBQ Chicken – baked fresh every day.",
-    feat3Title:"Tasty Burgers",
-    feat3Desc:"Beef, Chicken & Veggie burgers with fresh toppings and sauces."
-  },
-  ur:{
-    heroTitle:"مظفرگڑھ ریسٹورنٹ میں خوش آمدید",
-    heroSubtitle:"مزیدار کافی، پیزا، برگر اور فاسٹ فوڈ – تازہ تیار!",
-    heroBtn:"مینو دیکھیں",
-    feat1Title:"تازہ کافی",
-    feat1Desc:"اعلی معیار کے بینز سے خوشبودار کافی کا تجربہ کریں۔",
-    feat2Title:"مزیدار پیزا",
-    feat2Desc:"مارگریٹا، پیپرونی، بی بی کیو چکن – ہر روز تازہ بیک!",
-    feat3Title:"مزیدار برگر",
-    feat3Desc:"بیف، چکن اور سبزی والے برگر تازہ ٹاپنگ اور سوس کے ساتھ۔"
-  }
-};
-
 function setLang(lang){
-  document.body.style.direction=(lang==='ur')?'rtl':'ltr';
-  document.getElementById('hero-title').textContent=translations[lang].heroTitle;
-  document.getElementById('hero-subtitle').textContent=translations[lang].heroSubtitle;
-  document.getElementById('hero-btn').textContent=translations[lang].heroBtn;
-  document.getElementById('feat1-title').textContent=translations[lang].feat1Title;
-  document.getElementById('feat1-desc').textContent=translations[lang].feat1Desc;
-  document.getElementById('feat2-title').textContent=translations[lang].feat2Title;
-  document.getElementById('feat2-desc').textContent=translations[lang].feat2Desc;
-  document.getElementById('feat3-title').textContent=translations[lang].feat3Title;
-  document.getElementById('feat3-desc').textContent=translations[lang].feat3Desc;
+  if(lang=='ur'){alert('Urdu selected');}
+  else if(lang=='srk'){alert('Saraiki selected');}
+  else{alert('English selected');}
 }
 </script>
 
